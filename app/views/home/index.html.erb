@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Shortn!</title>
+  <meta charset="utf-8">
+  <meta content="authenticity_token" name="csrf-param" />
+  <meta content="QyHcmC5yXwutEJs/Dj7lWhGV29m/+OhnWe0svkxf6kY=" name="csrf-token" />
+  <%= stylesheet_link_tag "http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset-min.css" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=PT+Sans:400,700italic" %>
+  <%= stylesheet_link_tag "home" %>
+</head>
+<body>
+  	<div id="placeholder">
+	<h1>Shortn<span>.</span>it</h1>
+	<%= form_tag do %>
+		<textarea name="url" placeholder="Enter long URLs here..." onkeypress="if(event.which===13)
+		this.parentNode.submit()"></textarea>
+  		<button type="submit">Shortn!</button>
+	<% end %>
+	<ul class="url-list">
+		<% @events.each do |a| %>
+		<li>
+			<% @tmp =  request.host_with_port + "/" + a.url_hash %>
+			<span class="original"><%= a.url_ori %></span> » 
+			<a href=<%= "http://" + @tmp %>><%= @tmp  %></a>
+		</li>
+		<% end %>
+	</ul>
+  	</div>
+</body>
+</html>

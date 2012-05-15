@@ -1,0 +1,20 @@
+<ul>
+<% @events.each do |event| %>
+  <li>
+  <% @url = request.host_with_port + '/' + event.url_hash%>
+  <%= event.url_ori %> 
+  <%= link_to @url, @url %>
+  <% if (event.cookies_key != nil) %>
+  	<%= "cookies_key: "+ event.cookies_key %>
+  <% else %>
+	<%= "no cookies key!" %>
+  <% end %>		
+
+  </li>
+<% end %>
+</ul>
+<%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f| %>
+    <%= f.label :url_ori, "original url" %>
+    <%= f.text_field :url_ori %>    
+    <%= f.submit "Create" %>
+<% end %>

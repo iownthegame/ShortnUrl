@@ -1,21 +1,10 @@
 == ShortnUrl
 
 ShortnUrl is an example to shorten the url, implemented by Ruby on Rails.
-Once get the clients input url, we send it to the server, hash it, save the map on the server, and return the shorten-hashed url.
+
+Once getting the clients input url, we send it to the server, hash it, save the map on the server, and return the shorten-hashed url.
 
 == Live Demo
 
 You can find the example here
 link:http://chickshortn.herokuapp.com/
-
-#== Getting Started
-#
-#1. At the command prompt, create a new Rails application:
-#       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
-#
-#2. Change directory to <tt>myapp</tt> and start the web server:
-#       <tt>cd myapp; rails server</tt> (run with --help for options)
-#
-#3. Go to http://localhost:3000/ and you'll see:
-#       "Welcome aboard: You're riding Ruby on Rails!"
-#
